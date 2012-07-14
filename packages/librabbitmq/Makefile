@@ -20,9 +20,9 @@ define Package/librabbitmq
 	TITLE:=librabbitmq is a client library for RabbitMQ written in C
 endef
 
-define Build/Configure
-	$(call Build/Configure/Default)
-endef
+CONFIGURE_ARGS += \
+	--enable-shared \
+	--enable-static \
 
 define Build/InstallDev
   $(INSTALL_DIR) $(1)/usr/include
