@@ -24,4 +24,12 @@ CONFIGURE_ARGS += \
 	--enable-shared \
 	--enable-static \
 
+define Build/Configure
+	$(call Build/Configure/Default)
+endef
+
+define Package/librabbitmq/install
+	$(call Build/Install/Default)
+endef
+
 $(eval $(call BuildPackage,librabbitmq))
